@@ -1,0 +1,13 @@
+==========
+Attributes
+==========
+
+<div enabled></div>
+
+---
+
+(source_file
+  (start_tag
+    (attribute)
+  )
+  (end_tag))

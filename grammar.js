@@ -15,9 +15,11 @@ module.exports = grammar({
 
     comment: (_) => seq("<!--", /[^-]*(-[^-]+)*?/, "-->"),
 
-    start_tag: (_) => seq("<", /[a-z]*/, ">"),
+    start_tag: ($) => seq("<", /[a-z]*/, optional(repeat($.attribute)), ">"),
 
     end_tag: (_) => seq("</", /[a-z]+/, ">"),
+
+    attribute: (_) => token(/[a-z]+/),
   },
 });
 
