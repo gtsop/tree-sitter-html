@@ -1,0 +1,12 @@
+====
+Text
+====
+
+<p>some text</p>
+
+---
+
+(source_file
+  (start_tag)
+  (text)
+  (end_tag))

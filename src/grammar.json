@@ -13,11 +13,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "start_tag"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "end_tag"
+            "name": "_full_tag"
           }
         ]
       }
@@ -97,6 +93,43 @@
         }
       ]
     },
+    "_full_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "start_tag"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "text"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_full_tag"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_tag"
+        }
+      ]
+    },
     "end_tag": {
       "type": "SEQ",
       "members": [
@@ -137,6 +170,10 @@
           "value": "\""
         }
       ]
+    },
+    "text": {
+      "type": "PATTERN",
+      "value": "[^<]+"
     }
   },
   "extras": [
