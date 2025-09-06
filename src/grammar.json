@@ -5,8 +5,21 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "comment"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "start_tag"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "end_tag"
+          }
+        ]
       }
     },
     "comment": {
@@ -23,6 +36,40 @@
         {
           "type": "STRING",
           "value": "-->"
+        }
+      ]
+    },
+    "start_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[a-z]*"
+        },
+        {
+          "type": "STRING",
+          "value": ">"
+        }
+      ]
+    },
+    "end_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "</"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[a-z]+"
+        },
+        {
+          "type": "STRING",
+          "value": ">"
         }
       ]
     }

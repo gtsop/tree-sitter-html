@@ -5,6 +5,11 @@
     "fields": {}
   },
   {
+    "type": "end_tag",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -16,16 +21,41 @@
         {
           "type": "comment",
           "named": true
+        },
+        {
+          "type": "end_tag",
+          "named": true
+        },
+        {
+          "type": "start_tag",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "start_tag",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "-->",
     "named": false
   },
   {
+    "type": "<",
+    "named": false
+  },
+  {
     "type": "<!--",
+    "named": false
+  },
+  {
+    "type": "</",
+    "named": false
+  },
+  {
+    "type": ">",
     "named": false
   }
 ]

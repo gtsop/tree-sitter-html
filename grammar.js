@@ -11,9 +11,13 @@ module.exports = grammar({
   name: "html",
 
   rules: {
-    source_file: ($) => repeat($.comment),
+    source_file: ($) => repeat(choice($.comment, $.start_tag, $.end_tag)),
 
     comment: (_) => seq("<!--", /[^-]*(-[^-]+)*?/, "-->"),
+
+    start_tag: (_) => seq("<", /[a-z]*/, ">"),
+
+    end_tag: (_) => seq("</", /[a-z]+/, ">"),
   },
 });
 
