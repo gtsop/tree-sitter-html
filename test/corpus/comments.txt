@@ -4,11 +4,17 @@ Comments
 
 <!-- hello world -->
 <!-- hello-world -->
-<!-- hello>world -->
+<html><!-- hello>world --></html>
+<!--<html></html>-->
+<!--html></html-->
 
 ---
 
 (source_file
   (comment)
+  (comment)
+  (start_tag)
+  (comment)
+  (end_tag)
   (comment)
   (comment))

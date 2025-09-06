@@ -115,6 +115,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "_full_tag"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "comment"
                   }
                 ]
               }

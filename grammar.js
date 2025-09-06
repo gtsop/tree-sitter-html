@@ -28,7 +28,7 @@ module.exports = grammar({
     _full_tag: ($) =>
       seq(
         $.start_tag,
-        optional(repeat(choice($.text, $._full_tag))),
+        optional(repeat(choice($.text, $._full_tag, $.comment))),
         $.end_tag,
       ),
 
