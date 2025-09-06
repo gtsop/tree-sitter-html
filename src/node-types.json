@@ -1,6 +1,11 @@
 [
   {
-    "type": "attribute",
+    "type": "attribute_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "attribute_value",
     "named": true,
     "fields": {}
   },
@@ -47,11 +52,19 @@
       "required": false,
       "types": [
         {
-          "type": "attribute",
+          "type": "attribute_name",
+          "named": true
+        },
+        {
+          "type": "attribute_value",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "\"",
+    "named": false
   },
   {
     "type": "-->",
@@ -67,6 +80,10 @@
   },
   {
     "type": "</",
+    "named": false
+  },
+  {
+    "type": "=",
     "named": false
   },
   {

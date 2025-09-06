@@ -15,11 +15,21 @@ module.exports = grammar({
 
     comment: (_) => seq("<!--", /[^-]*(-[^-]+)*?/, "-->"),
 
-    start_tag: ($) => seq("<", /[a-z]*/, optional(repeat($.attribute)), ">"),
+    start_tag: ($) =>
+      seq(
+        "<",
+        /[a-z]*/,
+        optional(
+          repeat(seq($.attribute_name, optional(seq("=", $.attribute_value)))),
+        ),
+        ">",
+      ),
 
     end_tag: (_) => seq("</", /[a-z]+/, ">"),
 
-    attribute: (_) => token(/[a-z]+/),
+    attribute_name: (_) => token(/[a-z]+/),
+
+    attribute_value: (_) => seq('"', /[a-z]+/, '"'),
   },
 });
 

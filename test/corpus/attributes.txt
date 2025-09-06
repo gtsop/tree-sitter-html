@@ -3,11 +3,22 @@ Attributes
 ==========
 
 <div enabled></div>
+<div class="foo"></div>
+<div id="foo" class="foo"></div>
 
 ---
 
 (source_file
   (start_tag
-    (attribute)
-  )
+    (attribute_name))
+  (end_tag)
+  (start_tag
+    (attribute_name)
+    (attribute_value))
+  (end_tag)
+  (start_tag
+    (attribute_name)
+    (attribute_value)
+    (attribute_name)
+    (attribute_value))
   (end_tag))
