@@ -1,0 +1,14 @@
+========
+Comments
+========
+
+<!-- hello world-->
+<!-- hello-world -->
+<!-- hello>world -->
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  (comment))

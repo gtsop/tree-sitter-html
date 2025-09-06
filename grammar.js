@@ -11,7 +11,9 @@ module.exports = grammar({
   name: "html",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
-  }
+    source_file: ($) => repeat($.comment),
+
+    comment: (_) => seq("<!--", /[^-]*(-[^-]+)*?/, "-->"),
+  },
 });
+
